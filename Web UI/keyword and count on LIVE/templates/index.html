@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <title>Sentiment Analysis</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h1 class="navbar-brand">Sentiment Analysis</h1>
+    </nav>
+
+    <div class="container mt-5">
+        <form action="/" method="post">
+            <div class="row">
+                <div class="col-9">
+                  <input type="text" name="query" class="form-control" placeholder="Enter the search term to analyze..">
+                </div>
+                <div class="col">
+                  <input type="number" name="count" class="form-control" placeholder="Count">
+                </div>
+
+              </div>
+            <button type="submit" class="btn btn-primary btn-block mt-3">Analyze</button>
+        </form>
+
+        <hr>
+    </div>
+
+    {% if data %}
+        <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <p style="font-weight: bold">Search Term: <span class="text-info">{{ data[3] }}</span></p>
+            </div>
+            <div class="col">
+                <p class="text-success" style="font-weight: bold">Total {{ data[4] }} tweets analyzed</p>
+            </div>
+            </div>
+            <hr>
+            <p style="font-weight: bold">Positive: {{ data[0] }}%</p>
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: {{ data[0] }}%;" aria-valuenow={{ data[0] }} aria-valuemin='0' aria-valuemax='100'>{{ data[0] }}%</div>
+            </div>
+
+            <br>
+
+            <p style="font-weight: bold">Negative: {{ data[1] }}%</p>
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: {{ data[1] }}%;" aria-valuenow={{ data[1] }} aria-valuemin='0' aria-valuemax='100'>{{ data[1] }}%</div>
+            </div>
+
+            <br>
+
+            <p style="font-weight: bold">Neutral: {{ data[2] }}%</p>
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: {{ data[2] }}%;" aria-valuenow={{ data[2] }} aria-valuemin='0' aria-valuemax='100'>{{ data[2] }}%</div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
