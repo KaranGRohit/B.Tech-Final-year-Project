@@ -6,8 +6,8 @@ from textblob import TextBlob
 from collections import Counter
 
 
-api_key = 'aBBztpIv3jotagnMJLSovJrGf'
-api_secret_key = 'TzNxIUfFnRvesoWFpJr06C17eSfGoWQiBPjjKIUfzlsK96F23f'
+api_key = ''
+api_secret_key = ''
 auth = OAuth1(api_key, api_secret_key)
 screen_name = 'realDonaldTrump'
 url="https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name="+screen_name+"&count=200"
