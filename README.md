@@ -8,10 +8,10 @@
 
 ## Dependancy
 
-   Python3  
-   NLTK  
-   Tweepy  
-   TextBlob
+* Python3  
+* NLTK  
+* Tweepy  
+* TextBlob
 
 ## Objectives of the work
 
