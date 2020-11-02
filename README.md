@@ -12,6 +12,7 @@
 * NLTK  
 * Tweepy  
 * TextBlob
+* Twitter API Access
 
 ## Objectives of the work
 
